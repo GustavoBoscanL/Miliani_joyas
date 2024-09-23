@@ -191,54 +191,73 @@ nav {
     padding: 20px;
   }
   
-  /* Estilos para las cajas */
-  .box {
-    width: 100%;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centrar los textos en la caja */
-  }
-  
-  /* Estilos para las imágenes dentro de las cajas */
-  .box img {
+/* Estilos para las imágenes dentro de las cajas */
+.box img {
     display: block;
     margin: 0 auto;
-    max-width: 100%;
+    width: 100%; /* Forzar que todas las imágenes ocupen el 100% del ancho disponible */
     height: auto;
+    max-height: 550px;
+    object-fit: cover;
   }
   
   /* Estilos para los párrafos */
   .box p {
     font-size: 16px;
     color: #555555;
-    margin: 10px 0; /* Añadir margen entre párrafos */
+    margin: 10px 0;
   }
   
   /* Estilo específico para los títulos */
   .box p.titulo {
-    font-weight: bold; /* Hacer el título en negrita */
-    font-size: 18px; /* Un poco más grande */
-    color: #000000; /* Texto negro para destacar */
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
   }
   
-/* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
+  /* Estilos para la caja contenedora */
+  .content {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: stretch; /* Asegura que todas las cajas se estiren para ser del mismo tamaño */
+    gap: 20px; 
+  }
+  
+  /* Estilos para las cajas individuales */
+  .box {
+    flex: 1; 
+    max-width: 48%; /* Limita el ancho máximo de las cajas */
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Ajustar el alto mínimo de las cajas */
+  .box {
+    min-height: 200px; /* Ajusta esta altura para que las cajas sean iguales */
+  }
+  
+  /* Media query para pantallas más pequeñas */
+  @media (max-width: 768px) {
     .content {
-        grid-template-columns: 1fr; 
-        gap: 10px;
+      flex-direction: column; /* Apilar las cajas en pantallas pequeñas */
+      gap: 10px;
     }
-
+  
     .box {
-        padding: 15px;
+      max-width: 100%; /* Ancho completo en pantallas pequeñas */
+      padding: 15px;
     }
-
+  
     .box p {
-        font-size: 14px; 
+      font-size: 14px;
     }
-}
-
+  }
+  
 
 /*Testimonios */
 
