@@ -1,0 +1,25 @@
+  /*footer*/
+
+.footer {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social a {
+    color: #fff;
+    margin: 0 10px;
+}
+
+.social a:hover {
+    color: #666;
+    text-decoration: none;
+}
