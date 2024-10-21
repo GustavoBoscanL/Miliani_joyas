@@ -14,6 +14,21 @@ nav {
   padding: 0 20px;
 }
 
+/* Animación del contenido al cargar la página */
+.main, .testimonials, .footer {
+  opacity: 0;
+  transform: translateY(20px); /* Empieza un poco desplazado hacia abajo */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+body.loaded .main,
+body.loaded .testimonials,
+body.loaded .footer {
+  opacity: 1;
+  transform: translateY(0); /* Vuelve a su posición normal */
+}
+
+
 /*Logo*/
 .logo {
   font-size: 30px;
@@ -45,6 +60,14 @@ nav {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
+  transform: scale(0.9); /* Lo hacemos un poco más pequeño */
+  opacity: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.logo-container img.loaded {
+  transform: scale(1); /* Se agranda al tamaño original */
+  opacity: 1; /* Se vuelve visible */
 }
 
 /* Contenedor de búsqueda y carrito */
@@ -77,6 +100,16 @@ nav {
   cursor: pointer;
   flex-grow: 0;
   margin-right: 10px;
+}
+
+/*Animacion de los botenes "buscar" y "carrito"*/
+.search button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search button:hover {
+  background-color: #ddd; /* Cambia de color en hover */
+  transform: scale(1.05); /* Aumenta ligeramente su tamaño */
 }
 
 .cart-button {
@@ -126,6 +159,7 @@ nav {
   height: auto;
   max-height: 550px;
   object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Estilos para los párrafos */
@@ -140,6 +174,11 @@ nav {
   font-weight: bold;
   font-size: 18px;
   color: #000000;
+}
+
+.box img:hover {
+  transform: scale(1.05); /* Le damos un zoom sutil */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más fuerte en hover */
 }
 
 /* Estilos para la caja contenedora */
@@ -215,6 +254,7 @@ nav {
 }
 
 .dropbtn {
+  transition: background-color 0.3s ease; /* Transición para hover */
   background-color: #333;
   color: white;
   padding: 10px 20px;
@@ -222,6 +262,7 @@ nav {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  
 }
 
 .dropdown-content {
@@ -240,6 +281,8 @@ nav {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  transform: translateY(-10px); /* Lo movemos hacia arriba un poco antes de desplegar */
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .dropdown-content a:hover {
@@ -248,6 +291,8 @@ nav {
 
 .dropdown:hover .dropdown-content {
   display: block;
+  opacity: 1;
+  transform: translateY(0); /* Regresa a su posición normal */
 }
 
 .submenu-container {
@@ -300,6 +345,18 @@ nav {
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
+}
+
+/* Animación de fade-in */
+.testimonial {
+  opacity: 0;
+  transform: translateY(20px); /* Empieza un poco desplazado hacia abajo */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.testimonial.show {
+  opacity: 1;
+  transform: translateY(0); /* Vuelve a su posición original */
 }
 
 .testimonial:hover {
