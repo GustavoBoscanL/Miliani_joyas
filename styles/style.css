@@ -12,6 +12,7 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   padding: 0 20px;
+  flex-wrap: wrap; /* Permite que el contenido se acomode cuando sea necesario */
 }
 
 /* Animación del contenido al cargar la página */
@@ -81,6 +82,7 @@ body.loaded .footer {
   display: flex;
   align-items: center;
   margin-right: 10px; /* Separación entre la búsqueda y el carrito */
+  gap: 1px;
 }
 
 .search input {
@@ -219,6 +221,35 @@ body.loaded .footer {
   }
   .box p {
     font-size: 14px;
+  }
+  nav {
+    flex-direction: column; /* El contenido se apilará en una columna */
+    align-items: center; /* Centra todo el contenido */
+  }
+
+  .dropdown-content {
+    display: none;
+  }
+
+  .dropbtn {
+    display: block;
+    font-size: 18px;
+  }
+
+  .logo-container {
+    margin: 20px 0;
+  }
+
+  .search {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search input {
+    width: 70%;
+  }  
+  .logo-container img {
+    max-width: 80px; /* Reducir el tamaño del logo en pantallas más pequeñas */
   }
 }
 /*footer*/
